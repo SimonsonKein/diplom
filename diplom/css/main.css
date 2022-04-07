@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+.main_page {
+    width: 100vw;
+    height: 100vh;
+    background: url("../assets/img/main-bg.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content_left {
+    height: 100vh;
+    width: 40vw;
+    background: rgb(34,83,87);
+    background:
+            linear-gradient(90deg,
+            rgba(34,83,87,0.8925945378151261) 0%,
+            rgba(34,83,87,0.6096813725490196) 70%,
+            rgba(34,83,87,0.09987745098039214) 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: showLeft 2s ease;
+}
+
+@keyframes showLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.content_text {
+    font-size: 50px;
+    font-family: 'Gabriela-Regular', sans-serif;
+    font-weight: 700;
+    color: #fff;
+
+    animation: opacity 3s ease;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.arrow_to_map{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+
+    transition: transform .5s ease;
+}
+
+#arrow_part1, #arrow_part2 {
+    content: "";
+    width: 50px;
+    height: 10px;
+    background-color: #000000;
+    position: absolute;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+#arrow_part1 {
+    transform: translateY(200%) rotate(45deg);
+    left: -17px;
+}
+#arrow_part2 {
+    transform: translateY(200%) rotate(-45deg);
+    right: -17px;
+}
+
+.arrow_to_map:hover {
+    transform: translateY(-30%);
+}
+
+.map_bg_container {
+    position: relative;
+}
+.map {
+    width: 100vw;
+    height: 100vh;
+}
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+
+.link {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    position: absolute;
+}

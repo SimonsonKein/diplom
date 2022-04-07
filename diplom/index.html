@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!--    <link rel="stylesheet" href="assets/fonts/Gabriela-Regular.ttf">-->
+
+    <title>Главная</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <!--<script src="js/map-config.js"></script>-->
+</head>
+<body>
+<section class="main_page">
+    <div class="content_left">
+        <div class="content_text">Something that motivate You</div>
+    </div>
+
+    <div class="arrow_to_map" onclick="nextPage()">
+        <div id="arrow_part1"></div>
+        <div id="arrow_part2"></div>
+    </div>
+</section>
+
+<section class="map">
+    <div id="map"></div>
+
+    <!--<div class="map_bg_container">
+        <img src="assets/img/map.png" alt="" class="map_bg">
+        <div class="link"></div>
+    </div>-->
+</section>
+<!--<script src="js/nav.js"></script>-->
+<script>
+    var map = L.map('map').setView([0, 0], 1);
+    L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=xJsjjFDkyIfxYcyZcTqg', {
+        tileSize: 600,
+        zoomOffset: -1,
+        minZoom: 1,
+        attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+        crossOrigin: true
+    }).addTo(map);
+
+    var marker = L.marker([51.5, -0.09]).addTo(map);
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+</script>
+</body>
+</html>
